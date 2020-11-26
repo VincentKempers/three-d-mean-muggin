@@ -11,4 +11,5 @@ renderer.setClearColor('#e5e5e5');
 // set size (perferred to the window)
 renderer.setSize(window.innerWidth, window.innerHeight);
 // append to DOM
-document.body.appendChild( renderer.domElement );
+document.body.appendChild(renderer.domElement);
+
