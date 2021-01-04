@@ -63,14 +63,22 @@ function onMouseMove(event) {
     raycaster.setFromCamera(mouse, camera);
     // intersects
     var intersects = raycaster.intersectObjects(scene.children);
-
+    function setNumber() {
+        return {x: Math.floor(Math.random() * 10)}
+    };
     // set the animations on click
     for (var i = 0; i < intersects.length; i++) {
         // gsap animation setup
-        tl.to(intersects[i].object.scale, 1, {x: 4, ease: 'elastic'})
+        console.log(setNumber().x);
+        tl.to(intersects[i].object.scale, 1, {x: setNumber().x, ease: 'elastic'})
+        tl.to(intersects[i].object.scale, 1, {x: setNumber().x, ease: 'elastic'})
         tl.to(intersects[i].object.scale, .5, {x: .5, ease: 'elastic'})
         tl.to(intersects[i].object.position, 1, {x: 3, ease: 'easeout'})
         tl.to(intersects[i].object.scale, 1, {x: 2, ease: 'elastic'})
+        tl.to(intersects[i].object.scale, 1, {x: 3, ease: 'easeout'})
+        tl.to(intersects[i].object.position, 1, {x: 0, ease: 'easeout'})
+        tl.to(intersects[i].object.scale, 1, {x: 1, ease: 'elastic'})
+        tl.to(intersects[i].object.scale, 1, {y: 2, ease: 'elastic'})
     }
 }
 // animate
